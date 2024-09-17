@@ -1,6 +1,6 @@
 --THIS PROJECT WAS CREATED BY PETR TALLER--
 
-GCC: This is a remake of the original site "GCC"made by me used for Quotes
+Kvout: This is a remake of the original site "GCC"made by me used for Quotes
 
 this is what the datgabase looks like if it doesnt work:
 "
