@@ -2,6 +2,7 @@
 class DBC {
 public const SERVER_IP = "localhost";
 public const USER = "root";
+public const PORT: "3306";
 public const PASSWORD = "student";
 public const DATABASE = "WAlogin";
 private static $connection = null;
