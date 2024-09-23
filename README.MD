@@ -5,8 +5,8 @@ Kvout: This is a remake of the original site "GCC"made by me used for Quotes
 this is what the datgabase looks like if it doesnt work:
 "
 
-create database WALogin;
-use WALogin;
+create database Databs;
+use Databs;
 
 create table users (
     id int primary key auto_increment,
