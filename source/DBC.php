@@ -2,9 +2,9 @@
 class DBC {
 public const SERVER_IP = "localhost";
 public const USER = "root";
-public const PORT = "3306";
 public const PASSWORD = "123Heslicko888";
 public const DATABASE = "Database";
+public const PORT = "3306";
 private static $connection = null;
 
 protected function __construct()
@@ -26,9 +26,9 @@ public static function getConnection()
         self::$connection = mysqli_connect(
             self::SERVER_IP,
             self::USER,
-            self::PORT,
             self::PASSWORD,
-            self::DATABASE
+            self::DATABASE,
+            self::PORT
         );
         if (!self::$connection) {
             die('Could not connect to DB');
