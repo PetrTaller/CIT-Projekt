@@ -2,8 +2,8 @@
 class DBC {
 public const SERVER_IP = "localhost";
 public const USER = "root";
-public const PASSWORD = "123Heslicko888";
-public const DATABASE = "Database";
+public const PASSWORD = "123Heslicko888*";
+public const DATABASE = "Databs";
 public const PORT = "3306";
 private static $connection = null;
 
