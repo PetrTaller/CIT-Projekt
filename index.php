@@ -42,7 +42,7 @@ $profileId = DBC::getProfileId($_SESSION["username"]);
         </div>
         <div class="home">
           <h2>Get Started</h2>
-          <p>Joining Kvout is simple and quick. Sign up today and start exploring the endless possibilities of global communication, meet new people, share your stories.</p>
+          <p>Kvout is simple and quick. Sign up today and start exploring the endless possibilities of global communication, meet new people, share your stories.</p>
           <h2>Where we originate from:</h2>
           <div class="originate">
             <img src="assets/location.png" alt="Location" class="originate-image" style="width:750px; border: 5px solid rgba(0, 0, 0, 0.2); border-radius:50px;">
