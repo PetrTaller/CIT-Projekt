@@ -13,6 +13,86 @@ if (isset($_SESSION["message"])) {
 }
 include_once 'source/DBC.php';
 $profileId = DBC::getProfileId($_SESSION["username"]);
+
+// chat generovany api ->
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $data = json_decode(file_get_contents('php://input'), true);
+  if (isset($data['content']) && isset($data['author'])) {
+      $content = mysqli_real_escape_string($connection, $data['content']);
+      $author = mysqli_real_escape_string($connection, $data['author']);
+
+      $query = "INSERT INTO blog_posts (content, author) VALUES ('$content', '$author')";
+      if (mysqli_query($connection, $query)) {
+          $id = mysqli_insert_id($connection);
+          echo json_encode(['id' => $id]);
+      } else {
+          http_response_code(500);
+          echo json_encode(['error' => 'Failed to create blog post']);
+      }
+  } else {
+      http_response_code(400);
+      echo json_encode(['error' => 'Invalid data']);
+  }
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && !isset($_GET['blogId'])) {
+  $result = mysqli_query($connection, "SELECT * FROM blog_posts");
+  $posts = mysqli_fetch_all($result, MYSQLI_ASSOC);
+  echo json_encode($posts);
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['blogId'])) {
+  $blogId = intval($_GET['blogId']);
+  $query = "SELECT * FROM blog_posts WHERE id = $blogId";
+  $result = mysqli_query($connection, $query);
+  if ($post = mysqli_fetch_assoc($result)) {
+      echo json_encode($post);
+  } else {
+      http_response_code(404);
+      echo json_encode(['error' => 'Post not found']);
+  }
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'DELETE' && isset($_GET['blogId'])) {
+  $blogId = intval($_GET['blogId']);
+  $query = "DELETE FROM blog_posts WHERE id = $blogId";
+  if (mysqli_query($connection, $query)) {
+      echo json_encode(['message' => 'Post deleted']);
+  } else {
+      http_response_code(404);
+      echo json_encode(['error' => 'Post not found']);
+  }
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'PATCH' && isset($_GET['blogId'])) {
+  $blogId = intval($_GET['blogId']);
+  $data = json_decode(file_get_contents('php://input'), true);
+
+  $updateFields = [];
+  if (isset($data['content'])) {
+      $content = mysqli_real_escape_string($connection, $data['content']);
+      $updateFields[] = "content = '$content'";
+  }
+  if (isset($data['author'])) {
+      $author = mysqli_real_escape_string($connection, $data['author']);
+      $updateFields[] = "author = '$author'";
+  }
+
+  if (count($updateFields) > 0) {
+      $query = "UPDATE blog_posts SET " . implode(', ', $updateFields) . " WHERE id = $blogId";
+      if (mysqli_query($connection, $query)) {
+          echo json_encode(['message' => 'Post updated']);
+      } else {
+          http_response_code(404);
+          echo json_encode(['error' => 'Post not found']);
+      }
+  } else {
+      http_response_code(400);
+      echo json_encode(['error' => 'No fields to update']);
+  }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,18 +121,19 @@ $profileId = DBC::getProfileId($_SESSION["username"]);
           </div>
         </div>
         <div class="home">
-          <h2>Get Started</h2>
-          <p>Joining Kvout is simple and quick. Sign up today and start exploring the endless possibilities of global communication, meet new people, share your stories.</p>
-          <h2>Where we originate from:</h2>
-          <div class="originate">
-            <img src="assets/location.png" alt="Location" class="originate-image" style="width:750px; border: 5px solid rgba(0, 0, 0, 0.2); border-radius:50px;">
-            <div class="originate-overlay">
-              <div class="originate-text">17.7117147N, 9.8986503E</div>
-              </div>
-            </div>
-            <h2>Join the Conversation</h2>
-            <p>At Kvout: Global Chat Connect, we believe that meaningful connections can be made across any distance.<br>
-               Join us today and be part of a global community that celebrates diversity, fosters understanding, and connects people from all walks of life.</p>
+        <div class="blog-posts">
+  <?php
+  $response = file_get_contents('http://your-server/api/blog');
+  $posts = json_decode($response, true);
+  foreach ($posts as $post) {
+      echo "<div class='post'>";
+      echo "<h2>Author: " . htmlspecialchars($post['author']) . "</h2>";
+      echo "<p>" . htmlspecialchars($post['content']) . "</p>";
+      echo "<small>Created on: " . htmlspecialchars($post['created_at']) . "</small>";
+      echo "</div>";
+  }
+  ?>
+</div>
           </div>
         </div>
       <footer>Petr Taller 2024 ©</footer>
