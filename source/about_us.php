@@ -21,12 +21,12 @@ $profileId = DBC::getProfileId($_SESSION["username"]);
     <link rel="icon" type="x-icon" href="../assets/icon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css">
-    <title>GCC</title>
+    <title>Kvout</title>
   </head>
   <body>
     <div class="site">
       <div class="topnav">
-        <a class="icon" href="../index.php">&nbsp;GCC</a>
+        <a class="icon" href="../index.php">&nbsp;Kvout</a>
         <div class="topnav2">
           <a href="../index.php" style=" background-color: rgba(0, 0, 0, 0.2);">About us</a>
           <a href="quotes.php">Quotes</a>
@@ -56,7 +56,7 @@ $profileId = DBC::getProfileId($_SESSION["username"]);
                 <li style="text-align:left;"><strong>User-Friendly Interface:</strong> Our intuitive design makes it easy to navigate and engage in conversations, whether you're a tech-savvy user or just getting started.</li>
             </ul>
             <h2>Join Us</h2>
-            <p>Be a part of our growing community at Kvout: Global Chat Connect. Whether you're looking to make new friends,<br>
+            <p>Be a part of our growing community at Kvout Whether you're looking to make new friends,<br>
                  learn about different cultures, or just have a casual chat, you'll find a welcoming space here. Together,<br>
                   let's build bridges across continents and create lasting connections.</p>
             <p>Thank you for choosing Kvout. We look forward to chatting with you!</p>
