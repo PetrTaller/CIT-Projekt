@@ -20,5 +20,10 @@ create table quotes (
      author varchar(250), 
      content varchar(250) 
 );
-
+create table blog_posts (
+    id int primary key auto_increment, 
+    content text not null,
+    created_at datetime default current_timestamp,
+    author varchar(250) not null
+);
 "
