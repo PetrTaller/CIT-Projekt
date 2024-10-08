@@ -41,26 +41,26 @@ $profileId = DBC::getProfileId($_SESSION["username"]);
           </div>
         </div>
         <div class="about_us">
-            <h1>About Us</h1>
-            <p>Welcome to <strong>Kvout</strong>!</p>
-            <p>At Kvout, we believe in the power of connection and communication.Our platform is designed to bring people from all <br>
-                corners of the world together in one virtual space where you can share ideas, build friendships,and engage in meaningful conversations.</p>
-            <h2>Our Mission</h2>
-            <p>Our mission is to create a vibrant and inclusive community where everyone has a voice.<br>
-                 We aim to foster an environment that encourages open dialogue, cultural exchange, and mutual respect among all our users.</p>
-            <h2>Why Kvout?</h2>
-            <ul>
-                <li style="text-align:left;"><strong>Global Reach:</strong> Connect with users from different countries and cultures, broadening your horizons and enriching your understanding of the world.</li>
-                <li style="text-align:left;"><strong>Real-Time Communication:</strong> Enjoy seamless, real-time chat experiences that make you feel closer to others, no matter the distance.</li>
-                <li style="text-align:left;"><strong>Safe and Secure:</strong> Your safety is our priority. We have implemented robust security measures and moderation tools to ensure a positive and respectful environment for all users.</li>
-                <li style="text-align:left;"><strong>User-Friendly Interface:</strong> Our intuitive design makes it easy to navigate and engage in conversations, whether you're a tech-savvy user or just getting started.</li>
-            </ul>
-            <h2>Join Us</h2>
-            <p>Be a part of our growing community at Kvout Whether you're looking to make new friends,<br>
-                 learn about different cultures, or just have a casual chat, you'll find a welcoming space here. Together,<br>
-                  let's build bridges across continents and create lasting connections.</p>
-            <p>Thank you for choosing Kvout. We look forward to chatting with you!</p>
-        </div>
+    <h1>About Us</h1>
+    <p>Welcome to <strong>Kvout</strong>!</p>
+    <p>At Kvout, we celebrate the power of words. Our platform is dedicated to sharing, discovering, and reflecting on inspiring quotes from all walks of life.</p>
+    
+    <h2>Our Mission</h2>
+    <p>Our mission is to curate a diverse collection of quotes that resonate with people from all over the world.<br>
+       We aim to provide a space where ideas, wisdom, and experiences are shared through timeless quotes.</p>
+    
+    <h2>Why Kvout?</h2>
+    <ul>
+        <li style="text-align:left;"><strong>Diverse Collection:</strong> Explore a vast array of quotes on various topics such as love, life, wisdom, and motivation, all in one place.</li>
+        <li style="text-align:left;"><strong>Global Voices:</strong> Discover quotes from different cultures and time periods, offering a global perspective on shared human experiences.</li>
+        <li style="text-align:left;"><strong>Search and Share:</strong> Easily search for your favorite quotes and share them with your friends, family, or social media followers.</li>
+        <li style="text-align:left;"><strong>User Contributions:</strong> Submit your own favorite quotes and become a part of our growing community of word lovers.</li>
+    </ul>
+    
+    <h2>Join Us</h2>
+    <p>Be a part of our growing community at Kvout! Whether you're looking for daily inspiration, seeking wisdom, or just love reading quotes, you’ll find something here that speaks to you.</p>
+    <p>Thank you for choosing Kvout. Let’s inspire and be inspired together!</p>
+</div>
       <footer>Petr Taller 2024 ©</footer>
     </div>
   </body>
