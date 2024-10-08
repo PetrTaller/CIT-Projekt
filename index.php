@@ -41,20 +41,22 @@ $profileId = DBC::getProfileId($_SESSION["username"]);
           </div>
         </div>
         <div class="home">
-          <h2>Get Started</h2>
-          <p>Kvout is simple and quick. Sign up today and start exploring the endless possibilities of global communication, meet new people, share your stories.</p>
-          <h2>Where we originate from:</h2>
-          <div class="originate">
-            <img src="assets/location.png" alt="Location" class="originate-image" style="width:750px; border: 5px solid rgba(0, 0, 0, 0.2); border-radius:50px;">
-            <div class="originate-overlay">
-              <div class="originate-text">17.7117147N, 9.8986503E</div>
-              </div>
-            </div>
-            <h2>Join the Conversation</h2>
-            <p>At Kvout: Global Chat Connect, we believe that meaningful connections can be made across any distance.<br>
-               Join us today and be part of a global community that celebrates diversity, fosters understanding, and connects people from all walks of life.</p>
-          </div>
+    <h2>Get Started</h2>
+    <p>Kvout makes it easy to explore and discover amazing quotes. Sign up today and start your journey into the world of wisdom, inspiration, and timeless words.</p>
+
+    <h2>Where our inspiration comes from:</h2>
+    <div class="originate">
+        <img src="assets/location.png" alt="Location" class="originate-image" style="width:750px; border: 5px solid rgba(0, 0, 0, 0.2); border-radius:50px;">
+        <div class="originate-overlay">
+            <div class="originate-text">17.7117147N, 9.8986503E</div>
         </div>
+    </div>
+
+    <h2>Discover Inspiring Quotes</h2>
+    <p>At Kvout, we believe that words have the power to inspire, motivate, and bring people together.<br>
+       Join us today and become part of a community that celebrates the wisdom of words, connecting people through shared thoughts and reflections from around the world.</p>
+</div>
+
       <footer>Petr Taller 2024 ©</footer>
     </div>
   </body>
