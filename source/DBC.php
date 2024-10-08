@@ -1,7 +1,7 @@
 <?php
 class DBC {
-public const SERVER_IP = "localhost";
-public const USER = "root";
+public const SERVER_IP = "aws-web-database.cv4q64qmg5uo.eu-central-1.rds.amazonaws.com";
+public const USER = "admin";
 public const PASSWORD = "123Pindicek888*";
 public const DATABASE = "Databs";
 public const PORT = "3306";
