@@ -14,12 +14,6 @@ create table users (
     password varchar(250),
     profile_id int
 );
-
-create table quotes (
-     id int primary key auto_increment, 
-     author varchar(250), 
-     content varchar(250) 
-);
 create table blog_posts (
     id int primary key auto_increment, 
     content text not null,
