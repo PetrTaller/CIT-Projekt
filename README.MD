@@ -22,4 +22,5 @@ create table blog_posts (
     author varchar(250) not null,
     visibility varchar(250)
 );
+
 "
