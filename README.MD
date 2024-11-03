@@ -12,12 +12,14 @@ create table users (
     id int primary key auto_increment,
     username varchar(250),
     password varchar(250),
-    profile_id int
+    profile_id int,
+    is_admin BOOLEAN
 );
 create table blog_posts (
     id int primary key auto_increment, 
     content text not null,
     created_at datetime default current_timestamp,
-    author varchar(250) not null
+    author varchar(250) not null,
+    visibility varchar(250)
 );
 "
