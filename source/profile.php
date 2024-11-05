@@ -12,11 +12,6 @@ if(!isset($_SESSION["username"])) {
     header("Location: login.php");
     exit();
 }
-if (isset($_SESSION["message"])) {
-    $message = $_SESSION["message"];
-    echo "<script>alert('$message');</script>";
-    unset($_SESSION["message"]);
-}
 include_once 'DBC.php';
 $profileId = DBC::getProfileId($_SESSION["username"]);
 ?>
@@ -75,3 +70,10 @@ $profileId = DBC::getProfileId($_SESSION["username"]);
     <script src="script.js"></script>
   </body>
 </html>
+<?php
+if (isset($_SESSION["message"])) {
+  $message = $_SESSION["message"];
+  echo "<script>alert('$message');</script>";
+  unset($_SESSION["message"]);
+}
+?>
