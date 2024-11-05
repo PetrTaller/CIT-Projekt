@@ -6,11 +6,6 @@ $logged = true;
 if(!isset($_SESSION["username"])) {
 $logged = false;
 }
-if (isset($_SESSION["message"])) {
-  $message = $_SESSION["message"];
-  echo "<script>alert('$message');</script>";
-  unset($_SESSION["message"]);
-}
 include_once 'source/DBC.php';
 $profileId = DBC::getProfileId($_SESSION["username"]);
 ?>
@@ -61,3 +56,10 @@ $profileId = DBC::getProfileId($_SESSION["username"]);
     </div>
   </body>
 </html>
+<?php
+if (isset($_SESSION["message"])) {
+  $message = $_SESSION["message"];
+  echo "<script>alert('$message');</script>";
+  unset($_SESSION["message"]);
+}
+?>
