@@ -43,7 +43,7 @@ $profileId = DBC::getProfileId($_SESSION["username"]);
     <div class="originate">
         <img src="assets/location.png" alt="Location" class="originate-image" style="width:750px; border: 5px solid rgba(0, 0, 0, 0.2); border-radius:50px;">
         <div class="originate-overlay">
-            <div class="originate-text">17.7117147N, 9.8986503E</div>
+            <div class="originate-text" style="color: #838383;">17.7117147N, 9.8986503E</div>
         </div>
     </div>
 
