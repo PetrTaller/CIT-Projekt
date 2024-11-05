@@ -5,11 +5,6 @@ if(isset($_SESSION["username"])) {
     header("Location: ../index.php");
     exit();
 }
-if (isset($_SESSION["message"])) {
-    $message = $_SESSION["message"];
-    echo "<script>alert('$message');</script>";
-    unset($_SESSION["message"]);
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,3 +38,10 @@ if (isset($_SESSION["message"])) {
         </div>
     </body>
     </html>
+<?php
+if (isset($_SESSION["message"])) {
+  $message = $_SESSION["message"];
+  echo "<script>alert('$message');</script>";
+  unset($_SESSION["message"]);
+}
+?>
